@@ -24,6 +24,10 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ]]
 
+-- Let the server console know the initialization has begun
+core.log("[Agriculture:Compost] Initialization begins...")
+
+
 -- compatibility with other compost mods
 core.register_alias("compost:wood_barrel", "compost:composter")
 core.register_alias("compost:wood_barrel_1", "compost:composter")
@@ -447,3 +451,7 @@ compost.register_compostable_group("seed", 5)
 compost.register_compostable_group("food_wheat", 24)
 compost.register_compostable_group("food_flour", 27)
 compost.register_compostable_group("food_bread", 66)
+
+-- Let the server console know the initialization is complete
+core.log("[Agriculture:Compost] Initialization is complete.")
+
