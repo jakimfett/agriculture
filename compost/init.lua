@@ -262,6 +262,12 @@ local function composter_on_metadata_inventory_take(pos, listname, index, stack,
 	composter_update_state(pos, meta, meta:get_inventory())
 end
 
+local function composter_on_metadata_inventory_move(pos, from_list, from_index, to_list, to_index, count, player)
+	core.log("action", player:get_player_name() .. " moves stuff in compost bin at " .. core.pos_to_string(pos))
+	local meta = core.get_meta(pos)
+	composter_update_state(pos, meta, meta:get_inventory())
+end
+
 local function composter_drop_contents(pos, oldnode, oldmetadata, digger)
 	local meta = core.get_meta(pos)
 	meta:from_table(oldmetadata)
