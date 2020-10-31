@@ -8,7 +8,15 @@ terms of the Do What The Fuck You Want To Public License, Version 2,
 as published by Sam Hocevar. See http://www.wtfpl.net/ for more details.
 ]]
 
+-- Let the server console know the initialization is beginning.
+core.log("[Agriculture:Gardens] Initialization begins...")
+
+-- warning generated in main console log, @todo check for variable exists, like the '-z' option for Bash?
+core.log("[Agriculture:Gardens] Attempting to use any pre-existing 'gardens' object:")
+-- this bit uses an existing `gardens` object, or creates a new one, which is pretty nifty actually.
 gardens = gardens or {}
+core.log("(this warning may be safely ignored)")
+
 gardens.registered_garden_items = {}
 
 -- legacy
@@ -160,3 +168,7 @@ else
 		place_on = {"default:dirt_with_grass", "default:dirt_with_dry_grass"}
 	})
 end
+
+-- Let the server console know the initialization is done
+core.log("[Agriculture:Gardens] Initialization is complete.")
+
